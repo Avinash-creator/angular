@@ -1,0 +1,193 @@
+<app-header></app-header>
+<h1>works</h1>
+
+<br><br><br>
+
+<button mat-raised-button (click)="isOptional = !isOptional">
+  {{!isOptional ? 'Enable optional steps' : 'Disable optional steps'}}
+</button>
+<!----------------------------------FIRST STEPER---------------------------------------->
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>* Dedicated to (Full Name) </ng-template>
+      <mat-form-field>
+        <input matInput placeholder="please enter Full Name" formControlName="firstCtrl" required>
+      </mat-form-field><p>
+
+ <!--------------------------------------------------------------------------------------------->
+<mat-form-field>
+
+        <input matInput placeholder="Please enter Valid Email Id" formControlName="firstCtrl" required>
+      </mat-form-field><p>
+    <!-------------------------------------------------------------------------------------------------->  	
+
+<mat-form-field>
+
+        <input matInput placeholder="Please confirm Email Id" formControlName="firstCtrl" required>
+      </mat-form-field><p>
+<!-------------------------------------------------------------------------------------------------------------->
+
+
+<mat-form-field>
+
+        <input matInput placeholder="Please enter Valid Star Name" formControlName="firstCtrl" required>
+      </mat-form-field><p>
+      <!-------------------------------------------------------------------------------------------------------->
+
+<mat-form-field class="example-user-input">
+  <mat-select placeholder="Tooltip position" [formControl]="position">
+    <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+      {{positionOption}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <div>
+        <button mat-raised-button matStepperNext color="primary">Continue</button>
+      </div>
+    </form>
+    </mat-step>
+<!-------------------------------SECOND STEPER--------------------------------------->
+
+  <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Apply Discount</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Please Enter Coupen Code" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button matStepperPrevious color="primary">Back</button>
+        <button mat-raised-button matStepperNext color="primary">Continue</button>
+      </div>
+    </form>
+  </mat-step>
+
+<!---------------------------------THIRD STEPER------------------------------>
+
+  <mat-step [stepControl]="thirdFormGroup" [optional]="isOptional">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>CHOOSE IMPORTANT DATES</ng-template>
+      
+<mat-form-field class="example-user-input">
+  <mat-select placeholder="Birth(Girl)" [formControl]="positions">
+    <mat-option *ngFor="let positionOption of positionOptions" [value]="positionsOption">
+      {{positionsOption}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+     
+  <p>
+
+  <!-------------------------------DATE PICKER--------------------------------->
+
+ <mat-form-field color="accent">
+  <mat-label>Star Date</mat-label>
+  <input matInput [matDatepicker]="picker1">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field color="accent">
+  <mat-label>Send Date</mat-label>
+  <input matInput [matDatepicker]="picker2">
+  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+  <mat-datepicker #picker2 color="primary"></mat-datepicker>
+</mat-form-field>
+ <div>
+        <button mat-raised-button matStepperPrevious color="accent">Back</button>
+        <button mat-raised-button matStepperNext color="primary">Continue</button>
+      </div>
+    </form>
+</mat-step>
+
+<!----------------------------------FOURTH STEPER-------------------------------------->
+
+  <mat-step [stepControl]="fourthFormGroup" [optional]="isOptional">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Personalize Your Certificate</ng-template>
+     
+<div>
+  <button mat-fab color="accent">Standard</button>
+  <button mat-fab matStepperNext color="warn">Premium</button>
+</div>
+                    
+    </form>
+</mat-step>
+
+<!---------------FIFTH STEPER---------------------------->
+
+
+<mat-step [stepControl]="fifthFormGroup" [optional]="isOptional">
+    <form [formGroup]="fifthFormGroup">
+      <ng-template matStepLabel>Personalize Your Certificate</ng-template>
+     
+<div>
+  <button mat-fab matStepperPrevious color="accent">Standard</button>
+  <button mat-fab color="primary">Premium</button><p>
+</div>
+</form>
+<div>
+ <input type="file">
+ <input type="submit"><p>
+  <button mat-raised-button matStepperPrevious color="accent">back</button>
+   <button mat-raised-button matStepperNext color="primary">Continue</button>
+</div>
+</mat-step>
+
+
+<!-------------------------------------SIXTH STEPER----------------------------------->
+
+<mat-step [stepControl]="sixthFormGroup" [optional]="isOptional">
+    <form [formGroup]="sixthFormGroup">
+      <ng-template matStepLabel>Enter Your Details</ng-template>
+
+      <mat-form-field>
+
+        <input matInput placeholder="Please enter Your Email " formControlName="sixthCtrl" required>
+      </mat-form-field><p>
+
+         <mat-form-field>
+
+        <input matInput placeholder="Please enter Your Name " formControlName="sixthCtrl" required>
+      </mat-form-field><p>
+
+        <mat-form-field class="example-user-input">
+  <mat-select placeholder="Tooltip positionss" [formControl]="positionss">
+    <mat-option *ngFor="let positionssOption of positionssOptions" [value]="positionssOption">
+      {{positionssOption}}
+    </mat-option>
+  </mat-select>
+</mat-form-field><p>
+
+   <mat-form-field>
+
+        <input matInput placeholder="Please Enter Your 9 or 10 Digit Phone Number " formControlName="sixthCtrl" required>
+      </mat-form-field><p>
+
+        <textarea matInput placeholder="Personal Message on Certificate" formControlName="sixthCtrl"></textarea>
+     
+<div>
+  <button mat-raised-button matStepperPrevious color="accent">back</button>
+  <button mat-raised-button matStepperNext color="primary">Continue</button>
+</div>
+                    
+    </form>
+</mat-step>
+<!------------------------------------------------------------------------------------------------------------>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-raised-button matStepperPrevious color="primary">Back</button>
+      <button mat-button (click)="stepper.reset()" color ="accent">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+
+
+
+
+
